@@ -1,29 +1,266 @@
-html{
-    font-size: 20px;
-}
 
 
-.zm-header {
-    display: flex;
-    align-items: center;
-    position: fixed;
-    left: 70px;
-    top: 0;
-    right: 0;
-    height: 70px;
-   
+:root{
+    --hover: #8d22c3;
+    --purple-primary: #9b4de0;
+    --white :white;
+    --sidebar-popup-bg: #2a213a;
+    --alpha-bg: hsla(0, 0%, 100%, 0.1);
+    --body-bg: #170f23;
+    --text-placeholder: #dadada;
+    --navigation-text:#dadada;
 }
-.zm-header .lever{
-    display: flex;
+
+/* body */
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /* background: var(--body-bg); */
+
+}
+/* app */
+#app{
+    height: 100%;
     width: 100%;
 }
-.lever{
+/* layout */
+.layout{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+/* aside */
+.layout .sidebar{
+    width: 240px;
+    height: 100%;
+  
+}
+/* sidebar wrapper */
+.layout .sidebar .sidebar__wrapper{
+   width: 240px;
+   height: 500px;
+    background: var(--sidebar-popup-bg);
+    
+}
+/* logo */
+.sidebar__wrapper  .sidebar__navbar {
+    width: 240px;
+    height: 70px;
+    position: fixed;
+    top: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    background-color:var(--sidebar-popup-bg);
+    z-index: 10; 
 }
-.lever .lever-left{
+
+/* sidebar main */
+.sidebar__wrapper .sidebar__main {
+    width: 240px;
+    height: 100px; 
+    margin-top: 70px; 
+}
+
+/* sidebar menu */
+.sidebar__wrapper .sidebar__main .sidebar__main--menu {
+    width: 240px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* menu items */
+.sidebar__main .sidebar__main--menu .sidebar__navbar--item {
+    width: 210px;
+    height: 48px;
     display: flex;
+    font-weight: 700;
+    align-items: center;
+    color: var(--navigation-text);
+    border-left: 3px solid transparent;
+    padding: 12px 21px;
+}
+/* item a */
+.sidebar__main .sidebar__main--menu .sidebar__navbar--item a{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    text-decoration: none;
+}
+/* button play */
+.sidebar__main .sidebar__main--menu .sidebar__navbar--item .zm__btn{
+    width: 40px;
+    height: 40px;
+    background: var(--sidebar-popup-bg);
+    color: var(--text-placeholder);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    margin: 0px 7px;
+}
+
+
+
+
+
+
+/* header */
+.layout .header{
+    width: calc(100% - 240px);
+    height: 70px;
+    padding: 0px 59px;
+    display: flex;
+    background: var(--body-bg);
+}
+
+/* level */
+.layout .header .level{
+   display: flex;
+   width: 100%;
+   height: 50px;
+   align-items: center;
+}
+/* left */
+.layout .header .level .level__left{
+    display: flex;
+    width: 50%;
+    height: 40px;
+    margin: 0px 10px 0px 0px;
     align-items: center;
 }
+/* button arrow */
+.header .level .level__left .zm__btn{
+    width: 40px;
+    height: 40px;
+    background: var(--sidebar-popup-bg);
+    color: var(--text-placeholder);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    margin: 0px 7px;
+}
+/* search */
+.level__left .search{
+    width: 100%;
+    height: 40px;
+}
+/* search container */
+.level__left .search .search__container {
+    display: flex;
+    height: 40px;
+}
+/* input wrapper */
+.search__container .input__wrapper {
+    width: 100%;
+    height: 40px;
+    display: flex;    
+}
+/* input search */
+.search__container input {
+    width: 100%;
+    height: 40px;
+    padding: 0px 10px;
+    border: 1px solid var(--alpha-bg);
+    border-radius: 999px;
+    background: var(--alpha-bg);
+    color: var(--white);
+}
+/* button search */
+.search .search__container .button{
+    width: 50px;
+    height: 40px;
+    background: var(--sidebar-popup-bg);
+    color: var(--text-placeholder);
+    margin: 0px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* right */
+.layout .header .level .level__right{
+    display: flex;
+    width: 50%;
+    height: 45px;
+    align-items: center;
+    justify-content: flex-end;
+}
+/* button vip */
+.level__right .right__update--vip{
+    height: 40px;
+    color: var(--white);
+    text-decoration: none;
+    margin-right: 12px;
+    padding: 10px 20px;
+    border-radius: 100px;
+    background-color: var(--purple-primary);
+    color: var(--white);
+    line-height: 40px;
+    font-weight: bold;
+}
+ /* download  */
+.level__right .right__download{
+    height: 43px;
+    background-color: var(--alpha-bg);
+    border-radius: 999px;
+    margin-right:  10px;
+    padding: 10px 24px;
+
+}
+ /* download button */
+.level__right .right__download .zm__btn{
+    display: flex;
+    color: var(--purple-primary);
+    text-decoration: none;
+    align-items: center;
+    padding: 10px 24px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* setteng */
+.header .level .level__right .right__setting--item{
+    margin-right: 10px;
+}
+/* setting button */
+.level__right .right__setting--item .zm__btn{
+    width: 40px;
+    height: 40px;
+    background: var(--sidebar-popup-bg);
+    color: var(--text-placeholder);
+    align-items: center;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    margin: 10px;
+  
+}
+/* avatar */
+.level__right .right__user {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999%;
+    overflow: hidden;
+    background-color: var(--alpha-bg);
+}
+ /* avatar img */
+.level__right .right__user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 999%;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
 
